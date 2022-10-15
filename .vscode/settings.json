@@ -1,0 +1,6 @@
+{
+  "deno.enable": true,
+  "deno.unstable": true,
+  "deno.importMap": ".netlify/edge-functions-import-map.json",
+  "editor.defaultFormatter": "denoland.vscode-deno"
+}

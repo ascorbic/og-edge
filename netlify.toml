@@ -1,0 +1,37 @@
+[build]
+publish = "demo"
+
+[[edge_functions]]
+function = "custom-font"
+path = "/og/custom-font"
+
+[[edge_functions]]
+function = "dynamic-image"
+path = "/og/dynamic-image"
+
+[[edge_functions]]
+function = "emoji"
+path = "/og/emoji"
+
+[[edge_functions]]
+function = "image-svg"
+path = "/og/image-svg"
+
+[[edge_functions]]
+function = "language"
+path = "/og/language"
+
+[[edge_functions]]
+function = "param"
+path = "/og/param"
+
+[[edge_functions]]
+function = "static"
+path = "/og/static"
+
+[[edge_functions]]
+function = "tailwind"
+path = "/og/tailwind"
+
+[dev]
+framework = "#static"

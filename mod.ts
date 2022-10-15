@@ -86,7 +86,6 @@ const languageFontMap = {
   unknown: "Noto+Sans",
 };
 
-
 async function loadGoogleFont(font: string, text: string) {
   if (!font || !text) return;
 
@@ -114,7 +113,7 @@ async function loadGoogleFont(font: string, text: string) {
   return fetch(resource[1]).then((res) => res.arrayBuffer());
 }
 
-type Asset = SatoriOptions["fonts"][0] | string 
+type Asset = SatoriOptions["fonts"][0] | string;
 
 const assetCache = new Map<string, Asset | undefined>();
 const loadDynamicAsset = ({ emoji }: { emoji?: EmojiType }) => {

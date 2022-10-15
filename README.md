@@ -1,7 +1,8 @@
 # Open Graph Image Generation
 
 Generate Open Graph images with Deno and Netlify Edge Functions. This is a fork
-of the awesome [`@vercel/og`](https://www.npmjs.com/package/@vercel/og), ported to run on Deno.
+of the awesome [`@vercel/og`](https://www.npmjs.com/package/@vercel/og), ported
+to run on Deno.
 
 ## Usage
 
@@ -42,8 +43,8 @@ function = "og"
 path = "/og"
 ```
 
-Then run `netlify dev` and load http://localhost:8888/og, the React element will be
-rendered and responded as a PNG.
+Then run `netlify dev` and load http://localhost:8888/og, the React element will
+be rendered and responded as a PNG.
 
 To use with the Deno CLI or Deno Deploy, create a file with the following:
 
@@ -52,33 +53,30 @@ To use with the Deno CLI or Deno Deploy, create a file with the following:
 
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 import React from "https://esm.sh/react@18.2.0";
-import { ImageResponse } from 'https://deno.land/x/og_edge/mod.ts'
+import { ImageResponse } from "https://deno.land/x/og_edge/mod.ts";
 
 async function handler(req: Request) {
-    return new ImageResponse(
-    (
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: 128,
-          background: 'lavender',
-        }}
-      >
-        Hello!
-      </div>
-    )
-  )
+  return new ImageResponse(
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: 128,
+        background: "lavender",
+      }}
+    >
+      Hello!
+    </div>,
+  );
 }
 
 serve(handler);
-
 ```
-Then run `deno run --allow-net=:8000 --allow-env og.tsx` 
 
+Then run `deno run --allow-net=:8000 --allow-env og.tsx`
 
 Read more about the API, supported features and check out the examples in the
 following sections.
@@ -131,9 +129,9 @@ Please refer to
 [Satori’s documentation](https://github.com/vercel/satori#documentation) for a
 list of supported HTML and CSS features.
 
-By default, `og_edge` only has the Noto Sans font included. If you need to
-use other fonts, you can pass them in the `fonts` option. Check the **Custom
-Font** example below for more details.
+By default, `og_edge` only has the Noto Sans font included. If you need to use
+other fonts, you can pass them in the `fonts` option. Check the **Custom Font**
+example below for more details.
 
 ## Examples
 
@@ -151,10 +149,12 @@ Font** example below for more details.
 
 ## Development / Contributing
 
-
 ## Acknowledgements
 
-Basically all of the credit for this goes to [shuding](https://github.com/shuding). I just ported it to Deno and added a few tweaks.
+Basically all of the credit for this goes to
+[shuding](https://github.com/shuding). I just ported it to Deno and added a few
+tweaks.
 
 ## License
+
 Mozilla Public Licence. Copyright Vercel and Matt Kane

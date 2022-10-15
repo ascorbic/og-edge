@@ -1,4 +1,3 @@
-
 const apis = {
   twemoji: (code: string) =>
     "https://twemoji.maxcdn.com/v/latest/svg/" + code.toLowerCase() + ".svg",
@@ -33,9 +32,9 @@ export function getIconCode(char: string): string {
   return d(char.indexOf(n) < 0 ? char.replace(O, "") : char);
 }
 
-function d(j:string) {
-    const t = []
-    let A = 0, k = 0
+function d(j: string) {
+  const t = [];
+  let A = 0, k = 0;
   for (let E = 0; E < j.length;) {
     A = j.charCodeAt(E++),
       k

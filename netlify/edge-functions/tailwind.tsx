@@ -1,5 +1,5 @@
 import React from "https://esm.sh/react@18.2.0";
-import { ImageResponse } from '../../mod.ts'
+import { ImageResponse } from "../../mod.ts";
 
 export default function handler() {
   return new ImageResponse(
@@ -7,13 +7,13 @@ export default function handler() {
       // Modified based on https://tailwindui.com/components/marketing/sections/cta-sections
       <div
         style={{
-          height: '100%',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'white',
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "white",
         }}
       >
         <div tw="bg-gray-50 flex">
@@ -47,6 +47,6 @@ export default function handler() {
     {
       width: 1200,
       height: 630,
-    }
-  )
+    },
+  );
 }

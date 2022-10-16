@@ -1,8 +1,8 @@
 # Open Graph Image Generation
 
-Generate Open Graph images with Deno and Netlify Edge Functions. This is a fork
-of the awesome [`@vercel/og`](https://www.npmjs.com/package/@vercel/og), ported
-to run on Deno.
+Generate Open Graph images with Deno and Netlify Edge Functions, no framework
+needed. This is a fork of the awesome
+[`@vercel/og`](https://www.npmjs.com/package/@vercel/og), ported to run on Deno.
 
 ## Usage
 
@@ -43,10 +43,14 @@ function = "og"
 path = "/og"
 ```
 
-Then run `netlify dev` and load http://localhost:8888/og, the React element will
-be rendered and responded as a PNG.
+Make sure you have the latest version of
+[the Netlify CLI](https://docs.netlify.com/cli/get-started/) installed.Then run
+`netlify dev` and load http://localhost:8888/og, the React element will be
+rendered and returned as a PNG. To deploy to Netlify's edge network, run
+`netlify deploy`.
 
-To use with the Deno CLI or Deno Deploy, create a file with the following:
+Alternatively, to use with the Deno CLI or Deno Deploy, create a file with the
+following:
 
 ```tsx
 // /og.tsx

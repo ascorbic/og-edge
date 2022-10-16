@@ -10,6 +10,23 @@ import {
 } from "https://esm.sh/@resvg/resvg-wasm@2.0.0-alpha.4";
 import { EmojiType, getIconCode, loadEmoji } from "./emoji.ts";
 
+declare module "https://esm.sh/react@18.2.0" {
+  interface HTMLAttributes<T> {
+    /**
+     * Specify styles using Tailwind CSS classes. This feature is currently experimental.
+     * If `style` prop is also specified, styles generated with `tw` prop will be overridden.
+     *
+     * Example:
+     * - `tw='w-full h-full bg-blue-200'`
+     * - `tw='text-9xl'`
+     * - `tw='text-[80px]'`
+     *
+     * @type {string}
+     */
+    tw?: string;
+  }
+}
+
 const resvg_wasm = fetch(
   "https://unpkg.com/@vercel/og@0.0.18/vendor/resvg.simd.wasm",
 ).then((res) => res.arrayBuffer());

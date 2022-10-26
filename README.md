@@ -139,17 +139,21 @@ example below for more details.
 
 ## Examples
 
-- Embed SVG Image · [_source_](/netlify/edge-functions/image-svg.tsx) ·
-  [_demo_](https://og-examples.netlify.app/api/image-svg)
+- Embed SVG Image ·
+  [_source_](https://github.com/ascorbic/og-edge/blob/main//netlify/edge-functions/image-svg.tsx)
+  · [_demo_](https://og-examples.netlify.app/og/image-svg)
 - Dynamic PNG Image Based on URL Queries ·
-  [_source_](/netlify/edge-functions/dynamic-image.tsx) ·
-  [_demo_](https://og-examples.netlify.app/api/dynamic-image?username=ascorbic)
-- Custom Font · [_source_](/netlify/edge-functions/custom-font.tsx) ·
-  [_demo_](https://og-examples.netlify.app/api/custom-font)
-- Emoji · [_source_](/netlify/edge-functions/emoji.tsx) ·
-  [_demo_](https://og-examples.netlify.app/api/emoji)
-- Languages · [_source_](/netlify/edge-functions/language.tsx) ·
-  [_demo_](https://og-examples.netlify.app/api/language)
+  [_source_](https://github.com/ascorbic/og-edge/blob/main//netlify/edge-functions/dynamic-image.tsx)
+  · [_demo_](https://og-examples.netlify.app/og/dynamic-image?username=ascorbic)
+- Custom Font ·
+  [_source_](https://github.com/ascorbic/og-edge/blob/main//netlify/edge-functions/custom-font.tsx)
+  · [_demo_](https://og-examples.netlify.app/og/custom-font)
+- Emoji ·
+  [_source_](https://github.com/ascorbic/og-edge/blob/main//netlify/edge-functions/emoji.tsx)
+  · [_demo_](https://og-examples.netlify.app/og/emoji)
+- Languages ·
+  [_source_](https://github.com/ascorbic/og-edge/blob/main//netlify/edge-functions/language.tsx)
+  · [_demo_](https://og-examples.netlify.app/og/language)
 
 ## Development / Contributing
 

@@ -121,7 +121,7 @@ When running in production, these headers will be included by `og_edge`:
 
 ```jsx
 'content-type': 'image/png',
-'cache-control': 'public, immutable, no-transform, max-age=31536000',
+'cache-control': 'public, max-age=31536000, no-transform, immutable',
 ```
 
 During development, the `cache-control: no-cache, no-store` header is used

@@ -227,7 +227,7 @@ export class ImageResponse {
         "content-type": "image/png",
         "cache-control": isDev
           ? "no-cache, no-store"
-          : "public, immutable, no-transform, max-age=31536000",
+          : "public, max-age=31536000, no-transform, immutable",
         ...extendedOptions.headers,
       },
       status: extendedOptions.status,

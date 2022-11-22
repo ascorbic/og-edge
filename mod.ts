@@ -176,7 +176,7 @@ const loadDynamicAsset = ({ emoji }: { emoji?: EmojiType }) => {
   };
 };
 
-export class ImageResponse {
+export class ImageResponse extends Response {
   constructor(element: ReactElement, options: ImageResponseOptions = {}) {
     const extendedOptions = Object.assign(
       {
@@ -222,7 +222,7 @@ export class ImageResponse {
       },
     });
 
-    return new Response(result, {
+    super(result, {
       headers: {
         "content-type": "image/png",
         "cache-control": isDev

@@ -1,8 +1,8 @@
 import type { ReactElement } from "https://esm.sh/react@18.2.0";
-import type { SatoriOptions } from "https://esm.sh/satori@0.0.40";
+import type { SatoriOptions } from "https://esm.sh/satori@0.0.46";
 
-import satori, { init as initSatori } from "https://esm.sh/satori@0.0.40/wasm";
-import { initStreaming } from "https://esm.sh/yoga-wasm-web@0.1.2";
+import satori, { init as initSatori } from "https://esm.sh/satori@0.0.46/wasm";
+import { initStreaming } from "https://esm.sh/yoga-wasm-web@0.3.0";
 
 import {
   initWasm,
@@ -28,15 +28,15 @@ declare module "https://esm.sh/react@18.2.0" {
 }
 
 const resvg_wasm = fetch(
-  "https://unpkg.com/@vercel/og@0.0.18/vendor/resvg.simd.wasm",
+  "https://cdn.jsdelivr.net/npm/@vercel/og@0.0.25/vendor/resvg.simd.wasm",
 ).then((res) => res.arrayBuffer());
 
 const yoga_wasm = fetch(
-  "https://unpkg.com/@vercel/og@0.0.18/vendor/yoga.wasm",
+  "https://cdn.jsdelivr.net/npm/@vercel/og@0.0.25/vendor/yoga.wasm",
 );
 
 const fallbackFont = fetch(
-  "https://unpkg.com/@vercel/og@0.0.18/vendor/noto-sans-v27-latin-regular.ttf",
+  "https://cdn.jsdelivr.net/npm/@vercel/og@0.0.25/vendor/noto-sans-v27-latin-regular.ttf",
 ).then((a) => a.arrayBuffer());
 
 const initializedResvg = initWasm(resvg_wasm);
@@ -89,21 +89,28 @@ type ImageResponseOptions = ConstructorParameters<typeof Response>[1] & {
 // than built-in.
 // @TODO: Cover most languages with Noto Sans.
 const languageFontMap = {
-  zh: "Noto+Sans+SC",
-  ja: "Noto+Sans+JP",
-  ko: "Noto+Sans+KR",
-  th: "Noto+Sans+Thai",
-  he: "Noto+Sans+Hebrew",
-  ar: "Noto+Sans+Arabic",
-  bn: "Noto+Sans+Bengali",
-  ta: "Noto+Sans+Tamil",
-  te: "Noto+Sans+Telugu",
-  ml: "Noto+Sans+Malayalam",
+  "ja-JP": "Noto+Sans+JP",
+  "ko-KR": "Noto+Sans+KR",
+  "zh-CN": "Noto+Sans+SC",
+  "zh-TW": "Noto+Sans+TC",
+  "zh-HK": "Noto+Sans+HK",
+  "th-TH": "Noto+Sans+Thai",
+  "bn-IN": "Noto+Sans+Bengali",
+  "ar-AR": "Noto+Sans+Arabic",
+  "ta-IN": "Noto+Sans+Tamil",
+  "ml-IN": "Noto+Sans+Malayalam",
+  "he-IL": "Noto+Sans+Hebrew",
+  "te-IN": "Noto+Sans+Telugu",
   devanagari: "Noto+Sans+Devanagari",
+  kannada: "Noto+Sans+Kannada",
+  symbol: ["Noto+Sans+Symbols", "Noto+Sans+Symbols+2"],
+  math: "Noto+Sans+Math",
   unknown: "Noto+Sans",
 };
 
-async function loadGoogleFont(font: string, text: string) {
+async function loadGoogleFont(fonts: string | string[], text: string) {
+  // @TODO: Support multiple fonts.
+  const font = Array.isArray(fonts) ? fonts.at(-1) : fonts;
   if (!font || !text) return;
 
   const API = `https://fonts.googleapis.com/css2?family=${font}&text=${

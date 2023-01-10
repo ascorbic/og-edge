@@ -108,7 +108,9 @@ const languageFontMap = {
   unknown: "Noto+Sans",
 };
 
-async function loadGoogleFont(font: string, text: string) {
+async function loadGoogleFont(fonts: string | string[], text: string) {
+  // @TODO: Support multiple fonts.
+  const font = Array.isArray(fonts) ? fonts.at(-1) : fonts;
   if (!font || !text) return;
 
   const API = `https://fonts.googleapis.com/css2?family=${font}&text=${
@@ -155,7 +157,7 @@ const loadDynamicAsset = ({ emoji }: { emoji?: EmojiType }) => {
     if (!languageFontMap[code]) code = "unknown";
 
     try {
-      const data = await loadGoogleFont(Array.isArray(languageFontMap[code]) ? languageFontMap[code].at(-1) : languageFontMap[code], text);
+      const data = await loadGoogleFont(languageFontMap[code], text);
 
       if (data) {
         return {

@@ -1,4 +1,5 @@
 import type { ReactElement } from "https://esm.sh/react@18.2.0";
+
 import type { SatoriOptions } from "https://esm.sh/satori@0.4.0";
 
 import satori, { init as initSatori } from "https://esm.sh/satori@0.4.0/wasm";
@@ -28,15 +29,15 @@ declare module "https://esm.sh/react@18.2.0" {
 }
 
 const resvg_wasm = fetch(
-  "https://cdn.jsdelivr.net/npm/@vercel/og@0.0.25/vendor/resvg.simd.wasm",
+  "https://cdn.jsdelivr.net/npm/@vercel/og@0.1.0/vendor/resvg.simd.wasm",
 ).then((res) => res.arrayBuffer());
 
 const yoga_wasm = fetch(
-  "https://cdn.jsdelivr.net/npm/@vercel/og@0.0.25/vendor/yoga.wasm",
+  "https://cdn.jsdelivr.net/npm/@vercel/og@0.1.0/vendor/yoga.wasm",
 );
 
 const fallbackFont = fetch(
-  "https://cdn.jsdelivr.net/npm/@vercel/og@0.0.25/vendor/noto-sans-v27-latin-regular.ttf",
+  "https://cdn.jsdelivr.net/npm/@vercel/og@0.1.0/vendor/noto-sans-v27-latin-regular.ttf",
 ).then((a) => a.arrayBuffer());
 
 const initializedResvg = initWasm(resvg_wasm);

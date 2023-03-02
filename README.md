@@ -80,7 +80,7 @@ async function handler(req: Request) {
 serve(handler);
 ```
 
-Then run `deno run --allow-net=:8000,fonts.googleapis.com,fonts.gstatic.com,cdn.jsdelivr.net --allow-env og.tsx`
+Then run `deno run --allow-net --allow-env og.tsx`
 
 Read more about the API, supported features and check out the examples in the
 following sections.

@@ -1,7 +1,8 @@
 import type { ReactElement } from "https://esm.sh/react@18.2.0";
-import type { SatoriOptions } from "https://esm.sh/satori@0.2.2";
 
-import satori, { init as initSatori } from "https://esm.sh/satori@0.2.2/wasm";
+import type { SatoriOptions } from "https://esm.sh/satori@0.4.0";
+
+import satori, { init as initSatori } from "https://esm.sh/satori@0.4.0/wasm";
 import { initStreaming } from "https://esm.sh/yoga-wasm-web@0.3.0";
 
 import {

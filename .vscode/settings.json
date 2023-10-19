@@ -3,5 +3,8 @@
   "deno.unstable": true,
   "deno.lint": true,
   "deno.importMap": ".netlify/edge-functions-import-map.json",
-  "editor.defaultFormatter": "denoland.vscode-deno"
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "deno.enablePaths": [
+    "netlify/edge-functions"
+  ]
 }
